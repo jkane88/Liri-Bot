@@ -11,7 +11,7 @@ function startLIRI() {
     inquirer.prompt([{
         type: 'list',
         name: 'choice',
-        choices: ['spotify-song', 'concert-this', 'movie-this', 'do-what-it-says', 'exit'],
+        choices: ['spotify-song', 'concert-this', 'movie-this', 'exit'],
         message: message
     }]).then((inqResult) => {
 

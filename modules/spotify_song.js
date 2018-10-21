@@ -6,7 +6,7 @@ let track;
 let tracks;
 
 function findSong(songName, callback) {
-    const _songName = ((songName) ? songName : 'Gorillaz');
+    const _songName = ((songName) ? songName : 'Clint Eastwood');
     spotify.search({
         type: 'track,artist',
         query: _songName,
@@ -40,7 +40,7 @@ function findSong(songName, callback) {
         callback();
     });
 
-    util.appendCommandLog('spotify-song', _songName);
+    
 }
 
 function addTrackToArray(dataSource) {

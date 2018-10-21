@@ -12,7 +12,7 @@ function findBand(bandName, callback) {
 
     request(url, (error, response, body) => {
 
-        if (!error && response.statusCode === 200 && util.requestValidated(body)) {
+        if (!error && response.statusCode === 200) {
 
             const results = JSON.parse(body);
 
@@ -24,19 +24,15 @@ function findBand(bandName, callback) {
             printConcerts(_bandName);
             callback();
 
-        } else if (!util.requestValidated(body)) {
+        } else {
 
             console.log('No Results');
             return callback();
 
-        } else {
-
-            console.log(error);
-            return callback();
         }
     });
 
-    util.appendCommandLog('concert-this', _bandName);
+    
 }
 
 function addConcertToArray(dataSource) {

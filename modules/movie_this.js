@@ -10,7 +10,7 @@ function findMovie(movieTitle, callback) {
     let url = `http://www.omdbapi.com/?apikey=${omdbKey}&t=${_movieTitle}&type=movie&r=json&plot=short`;
     request(url, (error, response, body) => {
 
-        if (!error && response.statusCode === 200 && util.requestValidated(body)) {
+        if (!error && response.statusCode === 200) {
 
             const result = JSON.parse(body);
 
@@ -19,18 +19,13 @@ function findMovie(movieTitle, callback) {
 
             callback();
 
-        } else if (!util.requestValidated(body)) {
-
-            console.log('Bad search.');
-            return callback();
         } else {
 
-            console.log(error);
+            console.log('No results');
             return callback();
         }
     });
 
-    util.appendCommandLog('movie-this', _movieTitle);
 }
 
 function setMovie(sourceData) {
@@ -51,12 +46,12 @@ function printMovieInfo(search, movie) {
 
     // Set Rotten Tomatoes ratings colors based on the rating
     let rotTomRating = parseFloat(movie.rating.rottenTomatoes.replace('%', ''));
-    let rotTomColor = ((rotTomRating > 50) ? chalk.green : chalk.red);
+    let rotTomColor = ((rotTomRating > 50));
 
     console.log(`\n\n\rResults of search: "${(search)}":\n\n`);
     console.log(`Title:     ${(movie.title)}`);
     console.log(`Year:      ${(movie.year)}`);
-    console.log(`Rating: RottenTomatoes: ${rotTomColor(movie.rating.rottenTomatoes)}`);
+    console.log(`RottenTomatoes: ${(movie.rating.rottenTomatoes)}`);
     console.log(`Country:   ${(movie.country)}`);
     console.log(`Actors:    ${(movie.actors)}`);
     console.log(`Plot:      ${(movie.plot)}`);
