@@ -1,0 +1,30 @@
+{
+  "name": "Liri-Bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "keys.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkane88/Liri-Bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jkane88/Liri-Bot/issues"
+  },
+  "homepage": "https://github.com/jkane88/Liri-Bot#readme",
+  "dependencies": {
+    "client-request": "^2.3.0",
+    "dotenv": "^6.1.0",
+    "export": "^0.1.337",
+    "inquirer": "^6.2.0",
+    "moment": "^2.22.2",
+    "node-spotify-api": "^1.0.7",
+    "request": "^2.88.0",
+    "utility": "^1.15.0"
+  }
+}
